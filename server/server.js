@@ -4,6 +4,8 @@ import "dotenv/config";
 import helmet from "helmet";
 import bodyParser from "body-parser";
 
+import connectDB from "./configs/dbConnection.js";
+
 const app = express();
 
 const PORT = process.env.SERVER_PORT;
@@ -25,6 +27,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 /* DB Connection */
+connectDB();
 
 /* Routes */
 app.get("/", (req, res) => {
