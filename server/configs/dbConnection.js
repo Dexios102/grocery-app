@@ -1,25 +1,20 @@
 /* MongoDB Connection Config */
 import mongoose from "mongoose";
-import asyncHandler from "express-async-handler";
 
-const connectDB = asyncHandler(async () => {
+const connectDB = async () => {
+  const mongoURI = process.env.MONGO_URI;
+  if (!mongoURI) {
+    throw new Error("MONGO_URI environment variable is not defined.");
+  }
   try {
-    const mongoURI = process.env.MONGO_URI;
-
-    if (!mongoURI) {
-      throw new Error("MONGO_URI environment variable is not defined.");
-    }
-
     const connection = await mongoose.connect(mongoURI, {
       useNewUrlParser: true,
       useUnifiedTopology: true,
     });
-
     console.log(`MongoDB Connected: ${connection.connection.host}`);
   } catch (error) {
-    console.error(`MongoDB Connection Error: ${error.message}`);
-    process.exit(1);
+    console.error(`Error connecting to MongoDB: ${error}`);
   }
-});
+};
 
 export default connectDB;
