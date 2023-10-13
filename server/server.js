@@ -5,6 +5,7 @@ import helmet from "helmet";
 import bodyParser from "body-parser";
 
 import connectDB from "./configs/dbConnection.js";
+import router from "./routes/userAuth.routes.js";
 
 const app = express();
 
@@ -30,9 +31,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 connectDB();
 
 /* Routes */
-app.get("/", (req, res) => {
-  res.send("Hello World!");
-});
+app.use("/api", router);
 
 /* Server */
 app.listen(PORT, () => {
