@@ -3,6 +3,7 @@ import cors from "cors";
 import "dotenv/config";
 import helmet from "helmet";
 import bodyParser from "body-parser";
+import cookieParser from "cookie-parser";
 
 import connectDB from "./configs/dbConnection.js";
 import router from "./routes/userAuth.routes.js";
@@ -24,6 +25,7 @@ if (process.env.NODE_ENV === "production") {
 /* Middlewares */
 app.use(helmet());
 app.use(cors(corsOptions));
+app.use(cookieParser());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
