@@ -1,5 +1,7 @@
 import { Link } from "react-router-dom";
 import logo from "../assets/images/logo.png";
+import { FcGoogle } from "react-icons/fc";
+import { BsFacebook } from "react-icons/bs";
 
 const LoginPage = () => {
   return (
@@ -15,13 +17,33 @@ const LoginPage = () => {
         I-Grocery
       </Link>
       <div
-        className="w-full bg-gray-900 text-white rounded-lg shadow border
-      border-gray-700 md:mt-0 sm:max-w-md xl:p-0"
+        className="w-full bg-slate-900 text-white rounded-xl shadow border
+      border-gray-700 md:mt-0 sm:max-w-lg xl:p-0"
       >
         <div className="p-6 space-y-4 md:space-y-6 sm:p-8">
           <h1 className="text-xl font-bold leading-tight tracking-tight md:text-2xl">
-            Sign in your account
+            Welcome back
           </h1>
+          <div className="flex justify-between gap-2">
+            <button
+              className="flex-1 flex items-center gap-2 border border-gray-700 py-2 px-6
+            rounded-lg hover:bg-gray-800"
+            >
+              <FcGoogle className="text-2xl" /> Log in with Google
+            </button>
+            <button
+              className="flex-1 flex items-center gap-2 border border-gray-700 py-2 px-6
+            rounded-lg hover:bg-gray-800"
+            >
+              <BsFacebook className="text-2xl text-blue-600" /> Log in with Meta
+            </button>
+          </div>
+          <div className="flex justify-between items-center">
+            <div className="w-2/5 border-t border-gray-400"></div>
+            <span className="text-gray-400">or</span>
+            <div className="w-2/5 border-t border-gray-400"></div>
+          </div>
+
           <form className="space-y-4 md:space-y-6">
             <div>
               <label
@@ -81,12 +103,22 @@ const LoginPage = () => {
             </div>
             <button
               type="submit"
-              className="w-full text-white bg-cyan-800 hover:bg-cyan-900
+              className="w-full text-white bg-cyan-600 hover:bg-cyan-900
               focus:outline-none focus:ring focus:ring-cyan-300 font-medium rounded-lg
                text-sm px-5 py-2.5 text-center"
             >
               Sign in
             </button>
+            <p className="text-sm text-center font-light text-gray-500 dark:text-gray-400">
+              Don’t have an account yet?{" "}
+              <Link
+                to="/resgister"
+                href="#"
+                className="font-medium text-primary-600 hover:underline text-blue-500"
+              >
+                Sign up
+              </Link>
+            </p>
           </form>
         </div>
       </div>
