@@ -3,14 +3,14 @@ import Navbar from "./components/Navbar";
 
 const App = () => {
   return (
-    <>
-      <div className="header">
+    <main>
+      <header>
         <Navbar />
-      </div>
-      <div className="app">
+      </header>
+      <section className="bg-slate-800">
         <Outlet />
-      </div>
-    </>
+      </section>
+    </main>
   );
 };
 
