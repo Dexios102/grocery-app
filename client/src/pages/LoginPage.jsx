@@ -27,13 +27,13 @@ const LoginPage = () => {
           <div className="flex justify-between gap-2">
             <button
               className="flex-1 flex items-center gap-2 border border-gray-700 py-2 px-6
-            rounded-lg hover:bg-gray-800"
+            rounded-lg hover:bg-gray-800 focus:ring-1 focus:ring-gray-300"
             >
               <FcGoogle className="text-2xl" /> Log in with Google
             </button>
             <button
               className="flex-1 flex items-center gap-2 border border-gray-700 py-2 px-6
-            rounded-lg hover:bg-gray-800"
+            rounded-lg hover:bg-gray-800 focus:ring-1 focus:ring-gray-300"
             >
               <BsFacebook className="text-2xl text-blue-600" /> Log in with Meta
             </button>
@@ -56,7 +56,7 @@ const LoginPage = () => {
                 type="email"
                 className="bg-gray-700 border border-gray-600 placeholder-gray-400
                 text-white focus:ring focus:ring-cyan-500 focus:border-cyan-500 w-full p-2.5
-                rounded-lg sm:text-sm"
+                rounded-lg sm:text-sm hover:bg-gray-600"
                 placeholder="example@mail.com"
                 required
               />
@@ -72,7 +72,7 @@ const LoginPage = () => {
                 type="email"
                 className="bg-gray-700 border border-gray-600 placeholder-gray-400
                 text-white focus:ring focus:ring-cyan-500 focus:border-cyan-500 w-full p-2.5
-                rounded-lg sm:text-sm"
+                rounded-lg sm:text-sm hover:bg-gray-600"
                 placeholder="••••••••"
                 required
               />

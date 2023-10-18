@@ -4,7 +4,7 @@ import Navbar from "./components/Navbar";
 const App = () => {
   return (
     <main>
-      <header>
+      <header className="sticky top-0 z-50">
         <Navbar />
       </header>
       <section className="bg-slate-800">

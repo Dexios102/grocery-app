@@ -20,7 +20,7 @@ export const userSignUp = async (req, res) => {
       email,
       password: hashedPassword,
     });
-    const token = jwtSign(res, user._id);
+    jwtSign(res, user._id);
     return res.status(200).json({ message: "User created successfully", user });
   } catch (err) {
     return res.status(500).json({ message: err.message });
@@ -38,7 +38,7 @@ export const userSignIn = async (req, res) => {
     if (!isMatch) {
       return res.status(400).json({ message: "Invalid password" });
     }
-    const token = jwtSign(res, user._id);
+    jwtSign(res, user._id);
     const data = {
       _id: user._id,
       username: user.username,
